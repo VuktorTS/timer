@@ -1,12 +1,5 @@
-import {
-  BtnToggle,
-  Colon,
-  Number,
-  Part,
-  Parts,
-  TimerSection,
-  Unit,
-} from "./Timer.styled";
+import Button from "../Button/Button";
+import { Colon, Number, Part, Parts, TimerSection, Unit } from "./Timer.styled";
 
 function Timer() {
   return (
@@ -22,9 +15,7 @@ function Timer() {
           <Unit>seconds</Unit>
         </Part>
       </Parts>
-      <BtnToggle title="Play">
-        <img src="icons/play.svg" alt="Play" />
-      </BtnToggle>
+      <Button title="Play" icon="play" />
     </TimerSection>
   );
 }
