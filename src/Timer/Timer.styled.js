@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Colon } from "../TimeDisplay/TimeDisplay.styled";
 
 export const TimerSection = styled.section`
   color: white;
@@ -9,4 +10,19 @@ export const TimerSection = styled.section`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  &.timer-ticking ${Colon} {
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
 `;
