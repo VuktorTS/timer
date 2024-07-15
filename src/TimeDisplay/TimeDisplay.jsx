@@ -1,17 +1,15 @@
-import { Colon, Number, Part, Parts, Unit } from "./TimeDisplay.styled";
+import Number from "../Number/Number";
+import { Colon, Parts } from "./TimeDisplay.styled";
 
-function TimeDisplay() {
+function TimeDisplay({ time }) {
+  const minutes = Math.floor(time / 60);
+  const second = time % 60;
+
   return (
     <Parts>
-      <Part>
-        <Number>05</Number>
-        <Unit>minutes</Unit>
-      </Part>
+      <Number value={minutes} label="minutes" />
       <Colon>:</Colon>
-      <Part>
-        <Number>00</Number>
-        <Unit>seconds</Unit>
-      </Part>
+      <Number value={second} label="second" />
     </Parts>
   );
 }
