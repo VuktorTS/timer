@@ -17,7 +17,7 @@ function Timer({ startTime }) {
       setRemaining((oldValue) => {
         const value = oldValue - 1;
         if (value <= 0) {
-          setRemaining(false);
+          setRunning(false);
           return startTime;
         }
         return value;
