@@ -4,7 +4,7 @@ import { Timers } from "./TimerManager.styled";
 function TimerManager() {
   return (
     <Timers>
-      <Timer />
+      <Timer startTime={300} />
     </Timers>
   );
 }
