@@ -9,7 +9,7 @@ function TimerManager() {
   return (
     <Timers>
       {startTime > 0 ? (
-        <Timer startTime={startTime} onComplete={() => setStartTime(0)} />
+        <Timer startTime={startTime} onDelete={() => setStartTime(0)} />
       ) : (
         <AddTimer onAdd={setStartTime} />
       )}
