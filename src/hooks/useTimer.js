@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
 
-const reducer = (state, { type, reload }) => {
+const reducer = (state, { type, payload }) => {
   switch (type) {
     case "Play":
       return { ...state, isRunning: true };
@@ -20,7 +20,7 @@ const reducer = (state, { type, reload }) => {
       if (remaining > 0) {
         return { ...state, remaining };
       }
-      return { ...state, remaining: 0, isRunning: fakse, isCompleted: true };
+      return { ...state, remaining: 0, isRunning: false, isCompleted: true };
 
     default:
       return state;
