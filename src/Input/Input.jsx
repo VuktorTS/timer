@@ -1,15 +1,19 @@
+import { Part } from "../Number/Number.styled";
+import { InputNumber } from "./Input.styled";
+
 function Input({ name, value, ...rest }) {
   return (
-    <li>
-      <input
+    <Part>
+      <InputNumber
         type="number"
+        as="input"
         value={String(value).padStart(2, "0")}
         name={name}
         id={name}
         {...rest}
       />
-      <label htmlFor={name}>{name}</label>
-    </li>
+      <Unit htmlFor={name}>{name}</Unit>
+    </Part>
   );
 }
 
