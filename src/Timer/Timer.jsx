@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import TimeDisplay from "../TimeDisplay/TimeDisplay";
 import { TimerSection } from "./Timer.styled";
-import { clsx } from "clsx";
 
 function Timer({ startTime, onComplete }) {
   const [remaining, setRemaining] = useState(startTime);
