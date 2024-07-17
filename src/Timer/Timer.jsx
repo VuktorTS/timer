@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import TimeDisplay from "../TimeDisplay/TimeDisplay";
 import { TimerSection } from "./Timer.styled";
-import { clsx } from "clsx";
 
-function Timer({ startTime }) {
+function Timer({ startTime, onComplete }) {
   const [remaining, setRemaining] = useState(startTime);
   const [isRunning, setRunning] = useState(false);
 
@@ -17,8 +16,8 @@ function Timer({ startTime }) {
       setRemaining((oldValue) => {
         const value = oldValue - 1;
         if (value <= 0) {
-          setRemaining(false);
-          return startTime;
+          onComplete();
+          return 0;
         }
         return value;
       });
@@ -26,19 +25,20 @@ function Timer({ startTime }) {
 
     const interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
-  }, [isRunning, startTime]);
+  }, [isRunning, onComplete]);
 
   const play = () => setRunning(true);
   const pause = () => setRunning(false);
 
   return (
-    <TimerSection className={clsx({ "timer-ticking": isRunning })}>
+    <TimerSection>
       <TimeDisplay time={remaining} />
       {isRunning ? (
         <Button title="Pause" icon="pause" onClick={pause} />
       ) : (
         <Button title="Play" icon="play" onClick={play} />
       )}
+      <Button icon="trash" title="Delete" onClick={onComplete} />
     </TimerSection>
   );
 }
