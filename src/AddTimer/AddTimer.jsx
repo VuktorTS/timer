@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import { Colon, Parts } from "../TimeDisplay/TimeDisplay.styled";
+import Input from "../Input/Input";
 
 const EMPTY = { minutes: 0, seconds: 0 };
 
@@ -19,14 +21,14 @@ function AddTimer({ onAdd }) {
     setData(EMPTY);
   };
   return (
-    <form>
-      <ul>
-        <input type="text" />
-        <li></li>
-        <input type="text" />
-      </ul>
-      <Button />
-    </form>
+    <FormAddTime as="form" onSubmit={onSubmit}>
+      <Parts>
+        <Input name="minutes" value={data.minutes} onChange={onChange} />
+        <Colon>:</Colon>
+        <Input name="seconds" value={data.seconds} onChange={onChange} />
+      </Parts>
+      <Button icon="play" label="Start" />
+    </FormAddTime>
   );
 }
 
