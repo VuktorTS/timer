@@ -22,20 +22,20 @@ function Timer({ startTime, id, onDelete }) {
         <Button
           title="Pause"
           icon="pause"
-          onClick={dispatch({ type: "PAUSE" })}
+          onClick={() => dispatch({ type: "PAUSE" })}
         />
       ) : (
         <Button
           title="Play"
           icon="play"
-          onClick={dispatch({ type: "PLAY" })}
+          onClick={() => dispatch({ type: "PLAY" })}
           disabled={isCompleted}
         />
       )}
       <Button
-        icon="Restart"
+        icon="restart"
         label="Restart"
-        onClick={dispatch({ type: "RESTART" })}
+        onClick={() => dispatch({ type: "RESTART" })}
       />
       <Button icon="trash" title="Delete" onClick={() => onDelete(id)} />
     </TimerSection>

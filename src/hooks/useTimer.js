@@ -2,7 +2,7 @@ import { useEffect, useReducer } from "react";
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
-    case "Play":
+    case "PLAY":
       return { ...state, isRunning: true };
 
     case "PAUSE":
