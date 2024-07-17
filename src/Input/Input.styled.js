@@ -17,11 +17,3 @@ export const InputNumber = styled(NumberTime)`
     border-color: white;
   }
 `;
-
-export const Unit = styled.label`
-  margin: -1.2em 0 0;
-  text-transform: uppercase;
-  font-size: 10px;
-  text-align: center;
-  user-select: none;
-`;

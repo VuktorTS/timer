@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import { Colon, Parts } from "../TimeDisplay/TimeDisplay.styled";
 import Input from "../Input/Input";
+import { FormAddTime } from "./AddTimer.styled";
 
 const EMPTY = { minutes: 0, seconds: 0 };
 

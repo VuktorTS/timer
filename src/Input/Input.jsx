@@ -1,4 +1,4 @@
-import { Part } from "../Number/Number.styled";
+import { Part, Unit } from "../Number/Number.styled";
 import { InputNumber } from "./Input.styled";
 
 function Input({ name, value, ...rest }) {
