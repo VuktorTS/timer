@@ -25,4 +25,17 @@ export const TimerSection = styled.section`
       opacity: 0;
     }
   }
+  &.timer-ringing {
+    animation: ringing 0.5s infinite;
+  }
+  @keyframes ringing {
+    0%,
+    50% {
+      background: rgba(255 255 255 / 0.2);
+    }
+    51%,
+    100% {
+      background: rgba(255 255 255 / 0.1);
+    }
+  }
 `;
