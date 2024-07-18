@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import TimeDisplay from "../TimeDisplay/TimeDisplay";
 import { TimerSection } from "./Timer.styled";
 import useTimer from "../hooks/useTimer";
+import clsx from "clsx";
 
 function Timer({ startTime, id, onDelete }) {
   const {
@@ -10,13 +10,13 @@ function Timer({ startTime, id, onDelete }) {
     dispatch,
   } = useTimer(startTime);
 
-  const timerClass = [
-    isCompleted ? "timer-ringing" : "",
-    isRunning ? "timer-ticking" : "",
-  ].join(" ");
-
   return (
-    <TimerSection className={timerClass}>
+    <TimerSection
+      className={clsx({
+        "timer-ringing": isCompleted,
+        "timer-ticking": isRunning,
+      })}
+    >
       <TimeDisplay time={remaining} />
       {isRunning ? (
         <Button
