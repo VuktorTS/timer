@@ -28,7 +28,7 @@ function AddTimer({ onAdd }) {
         <Colon>:</Colon>
         <Input name="seconds" value={data.seconds} onChange={onChange} />
       </Parts>
-      <Button icon="play" label="Start" />
+      <Button icon="play" title="Start" />
     </FormAddTime>
   );
 }

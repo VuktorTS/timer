@@ -10,6 +10,8 @@ function Timer({ startTime, id, onDelete }) {
     dispatch,
   } = useTimer(startTime);
 
+  const handleDelete = () => onDelete(id);
+
   return (
     <TimerSection
       className={clsx({
@@ -34,10 +36,10 @@ function Timer({ startTime, id, onDelete }) {
       )}
       <Button
         icon="restart"
-        label="Restart"
+        title="Restart"
         onClick={() => dispatch({ type: "RESTART" })}
       />
-      <Button icon="trash" title="Delete" onClick={() => onDelete(id)} />
+      <Button icon="trash" title="Delete" onClick={handleDelete} />
     </TimerSection>
   );
 }
